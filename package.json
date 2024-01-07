@@ -9,7 +9,6 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
     "autoprefixer": "^10.4.16",
     "framer-motion": "10.17.9",
     "next": "^13.5.6",
