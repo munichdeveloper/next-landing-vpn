@@ -1,29 +1,11 @@
-import React, { useMemo } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import ButtonPrimary from "./misc/ButtonPrimary";
-import {motion} from "framer-motion";
+import React, { useMemo } from "react";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import ButtonPrimary from "./misc/ButtonPrimary";
 
-const Hero = ({
-  listUser = [
-    {
-      name: "Users",
-      number: "390",
-      icon: "/assets/Icon/heroicons_sm-user.svg",
-    },
-    {
-      name: "Locations",
-      number: "20",
-      icon: "/assets/Icon/gridicons_location.svg",
-    },
-    {
-      name: "Server",
-      number: "50",
-      icon: "/assets/Icon/bx_bxs-server.svg",
-    },
-  ],
-}) => {
+const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
@@ -32,35 +14,34 @@ const Hero = ({
       id="about"
     >
       <ScrollAnimationWrapper>
-          <motion.div
-            className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
-            variants={scrollAnimation}>
-            <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">
-                Want anything to be easy with <strong>LaslesVPN</strong>.
-              </h1>
-              <p className="text-black-500 mt-4 mb-6">
-                Provide a network for all your needs with ease and fun using
-                LaslesVPN discover interesting features from us.
-              </p>
-              <ButtonPrimary>Get Started</ButtonPrimary>
-            </div>
-            <div className="flex w-full">
-              <motion.div className="h-full w-full" variants={scrollAnimation}>
-                <Image
-                  src="/assets/Illustration1.png"
-                  alt="VPN Illustrasi"
-                  quality={100}
-                  width={612}
-                  height={383}
-                  layout="responsive"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
+        <motion.div
+          className="grid grid-flow-row sm:grid-flow-col md:grid-rows-1 gap-2 pt-6 sm:pt-16"
+          variants={scrollAnimation}>
+          <div className="bg-[#ffffff] rounded-[2rem] p-5 flex flex-col justify-center items-start row-start-2 sm:row-start-1">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-medium text-black-600 leading-[3.5rem]">
+              Turn<br />Reviews<br />from<br />anywhere<br />into<br /><strong>Affiliate Websites</strong>
+            </h1>
+            <p className="text-black-500 mt-4 mb-6 text-lg">
+              Let AI create a ready-to-go Affiliate Site for your niche from a few reviews in no time
+            </p>
+            <ButtonPrimary>Get involved</ButtonPrimary>
+          </div>
+          <div className="hidden sm:block bg-[#ffffff] rounded-[2rem] p-5 flex sm:w-full">
+            <motion.div className="h-full w-full flex items-center" variants={scrollAnimation}>
+              <Image
+                src="/assets/hero.jpg"
+                alt="VPN Illustrasi"
+                quality={100}
+                width={612}
+                height={383}
+                layout="responsive"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
       </ScrollAnimationWrapper>
-      <div className="relative w-full flex">
-        <ScrollAnimationWrapper
+      {/* <div className="bg-[#ffffff] rounded-[2rem] p-5 relative w-full flex"> */}
+      {/* <ScrollAnimationWrapper
           className="rounded-lg w-full grid grid-flow-row sm:grid-flow-row grid-cols-1 sm:grid-cols-3 py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100 bg-white-500 z-10">
           {listUser.map((listUsers, index) => (
             <motion.div
@@ -82,12 +63,12 @@ const Hero = ({
               </div>
             </motion.div>
           ))}
-       </ScrollAnimationWrapper>
-       <div
-          className="absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-64 sm:h-48 top-0 mt-8 mx-auto left-0 right-0"
+       </ScrollAnimationWrapper> */}
+      {/* <div
+          className="bg-[#ffffff] rounded-[2rem] p-5 absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-64 sm:h-48 top-0 mt-8 mx-auto left-0 right-0"
           style={{ filter: "blur(114px)" }}
-       ></div>
-      </div>
+       ></div> */}
+      {/* </div> */}
     </div>
   );
 };
